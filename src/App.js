@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import AddNewAddress from './components/AddNewAddress/AddNewAddress';
+import Modal from './components/Modal/Modal';
+import { useState } from 'react';
+import AddressForm from './components/AddressForm/AddressForm';
 
 function App() {
+  const [addNewAddress, setAddNewAddress] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AddNewAddress handleAddNewAddress={setAddNewAddress}/>
+      {
+        addNewAddress && <Modal handleClose={setAddNewAddress} headerText={"Add New Address"}>
+         <AddressForm />
+        </Modal>
+      }
     </div>
   );
 }

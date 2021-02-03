@@ -1,0 +1,28 @@
+.Modal_Wrapper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0.8;
+  right: 0;
+  background-color: #82908e;
+  color: #00a38a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .Modal{
+    border: 1px solid red;
+    color: black;
+    background-color: #fff;
+    min-width: 1080px;
+    height: auto;
+    margin: auto;
+    .Modal_Close {
+      cursor: pointer;
+    }
+    .Modal_Header_Container{
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
